@@ -1,0 +1,113 @@
+##server配置
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+##spring
+spring:
+##http请求
+    http:
+      encoding:
+        force: true
+        charset: UTF-8
+        enabled: true
+##数据源
+    datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&tinyInt1isBit=false&autoReconnect=true
+      username: root
+      password: admin
+## redis
+    redis:
+    #redis数据库的索引，默认为0
+      database: 5
+      host: xxxxxxx
+      password: admin
+      port: 6379
+      pool:
+        #连接池最大连接数
+        max-active: 40
+        #最小空闲链接数
+        min-idle: 0
+        #最大空闲链接数
+        max-idle: 30
+        #连接池最大阻塞等待时间，负数代表没有
+        max-wait: -1
+## mail
+    mail:
+      host: smtp.exmail.qq.com
+      username: xxxx
+      password: xxxx
+      default-encoding: UTF-8
+      properties:
+        smtp:
+          auth: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+            port: 465
+          starttls:
+            enable: true
+            required: true
+
+##mybatisPlus
+mybatis-plus:
+  type-aliases-package: com.springboot.model
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    id-type: 0
+    db-column-underline: true
+    field-strategy: 0
+    refresh-mapper: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+######################################################################################## 自定义相关####################################################################
+logging:
+  config: classpath:config/logback-spring.xml
+controller:
+  scanPackage: com.springboot.web.controller
+file-upload:
+  max-size: 100MB
+  request-size: 50MB
+  location: C://temp
+##另外一个dataSource
+custom:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/eduacation_dev?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&tinyInt1isBit=false&autoReconnect=true
+    username: root
+    password: admin
+## 连接池配置
+pool:
+  jdbc:
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: SELECT 1 FROM user
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    defaultAutoCommit: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    useGlobalDataSourceStat: true
+  redis:
+    testOnBorrow: true
+    testOnReturn: true
+## 三方服务
+thirdService:
+  alibaba:
+    sms:
+      accessKeyId:  xxxxxxxxxxxxxxx
+      accessKeySecret: xxxxxxxxxxxxxxx
+      template: xxxxxxxxxx
+      signName: test
+
+
