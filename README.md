@@ -2,7 +2,7 @@
 springboot集成shiro,mybatisPlus 等快速开发框架
 # 简介
     *采用redis作为缓存，采用jwt进行鉴权，多数据源，redis可以实现多个redisTemplate而达到不同类型缓存放入不同 index库中
-    *[Mybatis-Plus](https://github.com/baomidou/mybatis-plus)是一个 [Mybatis](http://www.mybatis.org/mybatis-3/) 的增强工具，有代码生成器，并且提供了类似hibernate的单表CRUD操作，又保留了mybatis的特性支持定制化 SQL，专注于业务开发
+    * [Mybatis-Plus](https://github.com/baomidou/mybatis-plus)是一个 [Mybatis](http://www.mybatis.org/mybatis-3/) 的增强工具，有代码生成器，并且提供了类似hibernate的单表CRUD操作，又保留了mybatis的特性支持定制化 SQL，专注于业务开发
     *Apache Shiro 作为安全框架
     *swagger-ui作为文档插件，自动生成相关文档
 # 功能简介
