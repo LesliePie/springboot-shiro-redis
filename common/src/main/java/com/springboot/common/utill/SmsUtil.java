@@ -74,8 +74,8 @@ public class SmsUtil {
         SendSmsRequest request = new SendSmsRequest();
         request.setPhoneNumbers(phoneNum);
         //必填:短信签名-可在短信控制台中找到
-        request.setSignName("师乎网");
-        //必填:短信模板-可在短信控制台中找到SMS_126359238  SMS_132775005
+        request.setSignName("签名");
+        //必填:短信模板-可在短信控制台中找到
         request.setTemplateCode(template);
         //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
         StringBuilder stringBuilder=new StringBuilder("{\"code\":\"");
