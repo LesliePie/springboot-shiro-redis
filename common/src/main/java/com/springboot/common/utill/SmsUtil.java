@@ -34,10 +34,10 @@ public class SmsUtil {
      */
     static final String domain = "dysmsapi.aliyuncs.com";
 
-    //static final String accessKeyId = "LTAI3KT4GKhJizGV";
-    static final String accessKeyId = "LTAI9QPngT6rSbps";
-   //static final String accessKeySecret = "DzeTFa42nrdphWI46GrrpgEmDzZBGZ";
-   static final String accessKeySecret = "KjSHSARxmp9NczNb0wgi4mldNLXgDj";
+
+    static final String accessKeyId = "xxxxxxxxxxxxxxxx";
+
+   static final String accessKeySecret = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     /**
      * 注册短信模板
      */
